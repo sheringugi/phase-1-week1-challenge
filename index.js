@@ -1,9 +1,15 @@
+/**Student Grade Generator
+ * Input should be between 0 and 100
+ * Output should be A > 79, B - 60 to 79, 
+ * C -  59 to 49, D - 40 to 49, E - less 40. 
+ */
+
 function getStudentGrade(grade){
     //validation
     if (grade === undefined || isNaN(grade) || grade<0 || grade>100){
         return "Invalid grade"
     }
-    //statements
+    //conditions
     if (grade>=80 && grade<=100){
         return "A"
     }
@@ -19,11 +25,20 @@ function getStudentGrade(grade){
     else if(grade < 40){
         return "E"
     }
-    return "Invalid grade"
+    else {
+        return "Invalid grade"
+    }
 }
 
+/** Speed Detector
+ * Input is speed of car
+ * Speed limit is 70
+ * When speed of car is less than 70 print "Ok"
+ * For every 5 km/s above the speed limit give the driver one demerit point and print the total number of demerit points.
+ * When driver gets more than 12 demerit points print "License suspended"
+*/
 function detectOverspeeding(speedOfCar) {
-    // Validating
+    // Validation
     if (speedOfCar === undefined || isNaN(speedOfCar)
     ){
         return "Invalid value"
@@ -35,20 +50,22 @@ function detectOverspeeding(speedOfCar) {
         return "Ok"
     }
     else {
-        excessSpeedLimit = speedOfCar - 70;
-        points = 0;
-        while (excessSpeedLimit > 0){
-            excessSpeedLimit = excessSpeedLimit - 5;
-            points = points + 1;
-            if(points > 12) {
-                return "License suspended";
-            }
+        excessSpeedLimit = (speedOfCar - 70)/5;
+        points = Math.floor(excessSpeedLimit);
+        if (points>12){
+            return "License suspended"
         }
-        return "Points:" + points;
+        else{
+            return ("Points:" + points)
+        }
     }
 
 }
 
+/**Net Salary Calculator
+ * Calculates a person's net salary by getting inputs of basic salary and benefits 
+ * Calculate the payee, NHIFDeductions, NSSFDeductions, gross salary, and net salary using KRA, NHIF, and NSSF values
+ */
 function calculateNetSalary(basicPay, benefits){
     // Net Salary= grossPay- deductions - paye
     basicPay = parseFloat(basicPay)
