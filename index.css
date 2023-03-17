@@ -1,0 +1,10 @@
+h1, h2, section {
+    margin-bottom: 50px; 
+    text-align: center;
+
+}
+
+#gradeTextBox, #speedTextBox, #grossSalaryTextBox, #benefitsTextBox {
+    width: 10%;
+    
+}

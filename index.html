@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1: Week One Challenge</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>Phase 1: Week One Challenge</h1>
+    <h2>The text boxes below are to run tests for each challenge</h2>
+    <section>Challenge 1
+        <div>
+            <input type="number" id="gradeTextBox">
+            <button onclick="outputGrade()" type="button">Submit</button>
+            <div id="outputGrade"></div>
+        </div>
+    </section>
+    <section>Challenge 2
+        <div>
+            <input type="number" id="speedTextBox">
+            <button onclick="outputSpeedResults()" type="button">Submit</button>
+            <div id="outputSpeedResults"></div>
+        </div>
+    </section>
+    <section>Challenge 3
+        <div>
+            <input type="number" id="grossSalaryTextBox">
+            <input type="number" id="benefitsTextBox">
+            <button onclick="outputNetSalary()" type="button">Submit</button>
+            <div id="outputNetSalary"></div>
+
+        </div>
+
+    </section>
+    <script src="./index.js"></script> 
+    <script  type="text/javascript">
+
+        function outputGrade() {
+            // Grab the input element
+            let input = document.getElementById('gradeTextBox').value
+
+            // Grab the output eleent
+            let output = document.getElementById('outputGrade')
+            
+            output.innerHTML = "You have grade " + getStudentGrade(input)
+        }
+        function outputSpeedResults(){
+            // Grab the input element
+            let input = document.getElementById('speedTextBox').value
+            // Grab output element
+            let output= document.getElementById('outputSpeedResults')
+            output.innerHTML = detectOverspeeding(input) 
+        }
+        function outputNetSalary() {
+            
+            // Grab the input elements
+            //first parameter
+            let inputGrossSalary = document.getElementById('grossSalaryTextBox').value
+            //second parameter
+            let inputBenefits = document.getElementById('benefitsTextBox').value
+
+            // Grab the ouput element
+            let output= document.getElementById('outputNetSalary')
+            
+            output.innerHTML = "Net salary is: " + calculateNetSalary(inputGrossSalary, inputBenefits)
+            
+        }
+</script>
+</body>
+</html>
