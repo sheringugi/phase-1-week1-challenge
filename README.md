@@ -1,4 +1,5 @@
 PHASE 1: WEEK ONE CHALLENGE
+
 Description
 This is the first independent code challenge undertaken while at Moringa School.
 Required to create a folder in your local enviroment and a corresponding README.md file to store the code written in this challenge.
